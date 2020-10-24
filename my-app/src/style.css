@@ -1,0 +1,59 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.main {
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    background-size: cover;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    color: white;
+    font-family: Cambria, Georgia, 'Segoe UI', Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    font-size: 50px;
+    line-height: 70px;
+    text-shadow: 5px 5px 5px black;
+}
+
+.inputSpace {
+    width: 100%;
+    text-align: center;
+}
+
+#searchBar {
+    width: 50%;
+    height: 70%;
+    border: black solid 2px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px 2px gray inset;
+    margin-bottom: 15px;
+}
+
+#searchButton {
+    width: 10%;
+    height: 75%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: white solid 2px;
+}
+
+#searchButton:hover {
+    cursor: pointer;
+    filter: brightness(80%);
+}
