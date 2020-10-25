@@ -34,16 +34,17 @@ body {
 
 #searchBar {
     width: 50%;
-    height: 70%;
+    height: 40px;
     border: black solid 2px;
     border-radius: 5px;
     box-shadow: 2px 3px 5px 2px gray inset;
     margin-bottom: 15px;
+    padding: 0px 15px;
 }
 
 #searchButton {
     width: 10%;
-    height: 75%;
+    height: 40px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 15px;
@@ -51,9 +52,44 @@ body {
     background-color: red;
     border-radius: 10px;
     border: white solid 2px;
+    margin-bottom: 50px;
 }
 
 #searchButton:hover {
     cursor: pointer;
     filter: brightness(80%);
+}
+
+.definitionBar {
+    display: inline-block;
+    width: 50%;
+    background-color: white;
+    padding: 10px;
+    text-align: left;
+    border-radius: 10px;
+    animation: appear 1s;
+}
+
+.cnChars {
+    font-family: Cambria, Georgia, 'Segoe UI', Times, 'Times New Roman', serif;
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.pinyin {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.definition {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
