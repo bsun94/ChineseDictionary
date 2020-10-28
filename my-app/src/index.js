@@ -4,11 +4,12 @@ import './style.css';
 
 import Header from './componenets/heading.js'
 import InputHandler from './componenets/inputHandler.js'
-import Background from './greatWall.jpg'
 
 ReactDOM.render(
-    <div className='main' style={{backgroundImage: `url(${Background})`}}>
-        <Header />
-        <InputHandler />
+    <div className='main-wrapper'>
+        <div className='main'>
+            <Header />
+            <InputHandler />
+        </div>
     </div>
 , document.getElementById('root'));
