@@ -21,7 +21,7 @@ class InputHandler extends React.Component {
                 return {response: enums[0]}
             })
 
-            const request = `http://127.0.0.1:5000/getDefinition/'${userInput.value}'`
+            const request = `http://chinesedictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com/getDefinition/'${userInput.value}'`  //for local - http://127.0.0.1:5000
             const response_key = 'definition'
             
             await fetch(request)

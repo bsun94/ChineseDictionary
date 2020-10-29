@@ -14,7 +14,7 @@ class DB_Handler():
     Handles the database connection for the Chinese Dictionary app; set to connect to cedictionary.db in /dict_db/
     """
     
-    DB_NAME = "../dict_db/cedictionary.db"
+    DB_NAME = "./cedictionary.db"
     
     def openConn(self):
         try:
