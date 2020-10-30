@@ -21,7 +21,7 @@ class InputHandler extends React.Component {
                 return {response: enums[0]}
             })
 
-            const request = `https://bsun-awseb.com/getDefinition/'${userInput.value}'`
+            const request = `https://elb.bsun-awseb.com/getDefinition/'${userInput.value}'`
             //for local - http://127.0.0.1:5000; base eb url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com
 
             const response_key = 'definition'
