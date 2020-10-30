@@ -26,7 +26,7 @@ class DictParser():
     """
     
     DICT_DB_U8 = r'../dict_db/cedict_ts.u8'
-    SQL_DB_NAME = r'../dict_db/cedictionary.db'
+    SQL_DB_NAME = r'../api_server/cedictionary.db'
     
     def __init__(self):
         self.max_len_pinyin = 0
