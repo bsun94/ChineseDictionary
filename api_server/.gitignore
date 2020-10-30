@@ -7,3 +7,8 @@
 #test files
 test.py
 /__pycache__
+
+#cert files
+*.pem
+*.crt
+AWS_CertUpload.jpg

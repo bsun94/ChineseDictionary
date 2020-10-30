@@ -21,7 +21,9 @@ class InputHandler extends React.Component {
                 return {response: enums[0]}
             })
 
-            const request = `http://chinesedictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com/getDefinition/'${userInput.value}'`  //for local - http://127.0.0.1:5000
+            const request = `https://bsun-awseb.com/getDefinition/'${userInput.value}'`
+            //for local - http://127.0.0.1:5000; base eb url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com
+
             const response_key = 'definition'
             
             await fetch(request)
@@ -30,9 +32,10 @@ class InputHandler extends React.Component {
                         return {response: json[response_key]}
                     })
                 )
-            .catch(error => this.setState(prevState => {
+            .catch(error => {console.log(error)
+                        this.setState(prevState => {
                         return {response: enums[1]}
-                    })
+                    })}
                 )
           // setState does not necessarily fire immediately; either put in a callback function or use componentDidUpdate for insta firing
         }
