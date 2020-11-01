@@ -2,7 +2,7 @@
 ##### A web app to offer definition of Chinese characters, words and idioms.
 ______________________
 
-**This build is based on a Python-JavaScript stack. Please ensure you have IDEs and runtime environments for both. For hosting, I personally chose AWS, although you're free to try out other providers.**
+**This build is based on a Python-JavaScript stack. Please ensure you have IDEs and runtime environments for both. For hosting, I personally chose AWS, although you're free to try out other providers. [Click here](https://master.d3bpdh4bmdckfp.amplifyapp.com/) to go to my app.**
 
 **Python dependencies - please make sure you have the following packages installed:**
 - Regular packages: sqlite3, sys, os, io
