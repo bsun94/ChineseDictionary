@@ -44,7 +44,7 @@ class defBar extends React.Component {
                             {this.props.res}
                         </div>
                     </div>
-                )
+                )  // make a validation function - could even do same thing, but makes the validation clear
             } else if (this.props.res.length > 0) {
                 return (
                     <div className='definitionBarsArea'>

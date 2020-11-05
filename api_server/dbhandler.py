@@ -24,10 +24,10 @@ class DB_Handler():
         
         return conn
     
-    def execute(self, conn, query):
+    def execute(self, conn, query, sanitizer):
         try:
             c = conn.cursor()
-            c.execute(query)
+            c.execute(query, sanitizer)
             results = c.fetchall()
             c.close()
         except:

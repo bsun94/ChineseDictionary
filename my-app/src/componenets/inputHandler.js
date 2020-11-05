@@ -14,14 +14,14 @@ class InputHandler extends React.Component {
     async dataGrab(event) {
         event.preventDefault()
 
-        const userInput = document.getElementById('searchBar')
+        const userInput = document.getElementById('searchBar')  // what to use instead of getElementById
 
         if (userInput.value) {
             this.setState(prevState => {
                 return {response: enums[0]}
             })
 
-            const request = `https://elb.bsun-awseb.com/getDefinition/'${userInput.value}'`
+            const request = `https://elb.bsun-awseb.com/getDefinition/${userInput.value}`
             //for local - http://127.0.0.1:5000; base eb url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com
 
             const response_key = 'definition'
@@ -53,6 +53,8 @@ class InputHandler extends React.Component {
             <DefBar key={this.keyGen()} res={this.state.response} />
         </form>
         ) // changing keys allows React to know if something has changed, and thus, re-render WITH animation
+        // sidebar? sharing between components
+        // service layer
     }
 }
 

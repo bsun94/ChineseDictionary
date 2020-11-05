@@ -18,10 +18,11 @@ class ChineseDict(Resource):
     DB = dbhandler.DB_Handler()
     
     def get(self, character):
-        query = f"select * from cedict where simplified={character} or traditional={character};"
+        query = "select * from cedict where simplified=:character or traditional=:character;"
+        sanitizer = {'character': character}  # prevents SQL injections with sqlite3
         
         conn = self.DB.openConn()
-        result = self.DB.execute(conn, query)
+        result = self.DB.execute(conn, query, sanitizer)
         self.DB.closeConn(conn)
         
         @after_this_request
