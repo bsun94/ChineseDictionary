@@ -22,6 +22,7 @@ body {
     width: 100%;
     margin: 0px;
     overflow: auto;
+    text-align: center;
 }
 
 .header {
@@ -34,6 +35,22 @@ body {
     font-size: 50px;
     line-height: 70px;
     text-shadow: 5px 5px 5px black;
+}
+
+.recentSearches {
+    width: 50%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bolder;
+    font-family: Cambria, Georgia, 'Segoe UI', Times, 'Times New Roman', serif;
+    color: white;
+}
+
+.recentSearchesList {
+    word-spacing: 3px;
 }
 
 .inputSpace {
@@ -78,6 +95,8 @@ body {
     border-radius: 10px;
     animation: appear 1s;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cnChars {

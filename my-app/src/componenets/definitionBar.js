@@ -1,7 +1,7 @@
 import React from 'react'
 
 class defBar extends React.Component {
-
+    
     parseDefs (defs) {
         let htmlOutput = []
         let splitDefs = defs.split(';')
@@ -29,22 +29,23 @@ class defBar extends React.Component {
                     <div className="definition">{this.parseDefs(definitions)}</div>
                 </div>
             )
-            console.log(htmlOutput)
         })
 
         return htmlOutput
     }
 
+    validResponse = () => Array.isArray(this.props.res)
+
     render () {
         if (this.props.res) {
-            if (!Array.isArray(this.props.res)) {
+            if (!this.validResponse()) {
                 return (
                     <div className='definitionBar'>
                         <div className="pinyin">
                             {this.props.res}
                         </div>
                     </div>
-                )  // make a validation function - could even do same thing, but makes the validation clear
+                )
             } else if (this.props.res.length > 0) {
                 return (
                     <div className='definitionBarsArea'>

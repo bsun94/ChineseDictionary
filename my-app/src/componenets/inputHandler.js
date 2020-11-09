@@ -1,28 +1,28 @@
 import React from 'react'
-import DefBar from './definitionBar.js'
+
 import enums from './enums.js'
 
 class InputHandler extends React.Component {
     constructor () {
         super ()
         this.state = {
+            searchChar: null,
             response: null
         }
+        this.updateState = this.updateState.bind(this)
         this.dataGrab = this.dataGrab.bind(this)
     }
 
-    async dataGrab(event) {
-        event.preventDefault()
+    async dataGrab(e) {
+        e.preventDefault()
 
-        const userInput = document.getElementById('searchBar')  // what to use instead of getElementById
-
-        if (userInput.value) {
+        if (this.state.searchChar) {
             this.setState(prevState => {
                 return {response: enums[0]}
             })
 
-            const request = `https://elb.bsun-awseb.com/getDefinition/${userInput.value}`
-            //for local - http://127.0.0.1:5000; base eb url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com
+            const request = `https://elb.bsun-awseb.com/getDefinition/${this.state.searchChar}`
+            //for local - http://127.0.0.1:5000; base AWS EB url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com
 
             const response_key = 'definition'
             
@@ -32,27 +32,33 @@ class InputHandler extends React.Component {
                         return {response: json[response_key]}
                     })
                 )
-            .catch(error => {console.log(error)
+            .catch(error => {
                         this.setState(prevState => {
                         return {response: enums[1]}
                     })}
                 )
-          // setState does not necessarily fire immediately; either put in a callback function or use componentDidUpdate for insta firing
+            .finally(() =>
+                this.props.getSearch(this.state.searchChar, this.state.response)
+            )
         }
     }
 
-    keyGen = () => Math.random() 
+    updateState = (e) => {
+        let character = e.target.value
+        this.setState(prevState => {
+            return {searchChar: character}
+        })
+    }
 
     render() {
         return (
-        <form className='inputSpace'>
-            <input id='searchBar' type='text' placeholder='Enter Chinese Character Here' />
-            <br />
-            <button id='searchButton' onClick={this.dataGrab}>Search!</button>
-            <br />
-            <DefBar key={this.keyGen()} res={this.state.response} />
-        </form>
-        ) // changing keys allows React to know if something has changed, and thus, re-render WITH animation
+            <form className='inputSpace'>
+                <input id='searchBar' type='text' placeholder='Enter Chinese Character Here' value={this.state.value} onChange={this.updateState} />
+                <br />
+                <button id='searchButton' onClick={this.dataGrab}>Search!</button>
+                <br />
+            </form>
+        )
         // sidebar? sharing between components
         // service layer
     }

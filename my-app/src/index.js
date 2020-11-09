@@ -2,14 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
-import Header from './componenets/heading.js'
-import InputHandler from './componenets/inputHandler.js'
+import MainApp from './componenets/mainApp.js'
 
 ReactDOM.render(
     <div className='main-wrapper'>
-        <div className='main'>
-            <Header />
-            <InputHandler />
-        </div>
+        <MainApp />
     </div>
 , document.getElementById('root'));
