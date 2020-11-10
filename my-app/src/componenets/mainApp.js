@@ -4,6 +4,7 @@ import Header from './heading.js'
 import InputHandler from './inputHandler.js'
 import DefBar from './definitionBar.js'
 import SearchHistory from './recentSearches'
+import WordDay from './wordOfDay'
 
 class ChineseDict extends React.Component {
     constructor() {
@@ -31,6 +32,7 @@ class ChineseDict extends React.Component {
                 <SearchHistory search={this.state.search} response={this.state.response} />
                 <InputHandler getSearch={this.getSearchChar}/>
                 <DefBar key={this.keyGen()} res={this.state.response} />
+                <WordDay search={this.state.search} />
             </div>
         )
     }

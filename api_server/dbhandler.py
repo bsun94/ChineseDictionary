@@ -24,7 +24,7 @@ class DB_Handler():
         
         return conn
     
-    def execute(self, conn, query, sanitizer):
+    def execute(self, conn, query, sanitizer={}):
         try:
             c = conn.cursor()
             c.execute(query, sanitizer)

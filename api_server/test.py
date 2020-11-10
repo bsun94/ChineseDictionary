@@ -9,7 +9,7 @@ Used just to test the build of api_server
 import requests
 
 BASE = 'http://127.0.0.1:5000/'
-CHAR = "'汉'"
+CHAR = "汉"
 
-response = requests.get(BASE + "getDefinition/" + CHAR)
+response = requests.get(BASE + "getRandom")
 print(response.json())
