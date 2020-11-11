@@ -18,8 +18,8 @@ class wordDay extends React.Component {
             return {response: enums[0]}
         })
 
-        const request = `https://elb.bsun-awseb.com/getRandom`
-            //for local - http://127.0.0.1:5000; base AWS EB url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com  https://elb.bsun-awseb.com
+        const request = `http://127.0.0.1:5000/getRandom`
+            //for local - http://127.0.0.1:5000; base AWS EB url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com;  https://elb.bsun-awseb.com
         
         const response_key = ['word', 'definition']
 
@@ -43,15 +43,15 @@ class wordDay extends React.Component {
     }
 
     render () {
-        let header = (<span className="cnChars">Entry of the Day is: {this.state.word}!</span>)
+        let header = (<div className="definitionBar">
+                        <span className="cnChars">The Entry of the Day is: {this.state.word}!</span>
+                    </div> )
         let empty = (<div></div>)
         
         if (!this.props.search) {
             return (
                 <div>
-                    <div className="definitionBar">
-                        {this.state.word ? header : empty}
-                    </div> 
+                    {this.state.word ? header : empty}
                     <DefBar res={this.state.response} />
                 </div>
             )

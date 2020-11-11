@@ -11,5 +11,5 @@ import requests
 BASE = 'http://127.0.0.1:5000/'
 CHAR = "汉"
 
-response = requests.get(BASE + "getRandom")
+response = requests.get(BASE + "getQuiz/5")
 print(response.json())

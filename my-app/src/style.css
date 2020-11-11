@@ -19,10 +19,29 @@ body {
 
 .main {
     position: relative;
-    width: 100%;
+    width: 100vw;
     margin: 0px;
     overflow: auto;
     text-align: center;
+}
+
+.navButtons {
+    position: relative;
+    display: flex;
+    margin-top: 5px;
+    margin-left: 1%;
+    width: 300px;
+    justify-content: space-between;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px black;
+}
+
+.navButtons .link:hover {
+    cursor: pointer;
+    text-decoration: underline white 1px;
 }
 
 .header {

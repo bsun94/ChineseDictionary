@@ -2,10 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
-import MainApp from './componenets/mainApp.js'
+import Navigation from './components/navigation.js'
 
-ReactDOM.render(
-    <div className='main-wrapper'>
-        <MainApp />
-    </div>
+ReactDOM.render( <Navigation />
 , document.getElementById('root'));

@@ -8,7 +8,8 @@ API server based on Flask to grab definitions from the dictionary db
 
 from flask import Flask, after_this_request
 from flask_restful import Api, Resource
-import datetime
+from datetime import datetime as dt
+import numpy as np
 import dbhandler
 
 application = Flask(__name__)
@@ -35,13 +36,13 @@ def getDef(character):
 @application.route("/getRandom")
 def getRand():
     query = "select count(*) from cedict;"
-    numerator = int(datetime.datetime.today().strftime('%Y%m%d'))
-    denominator = int(datetime.date(datetime.datetime.today().year, 12, 31).strftime('%Y%m%d'))
+    seed = int(dt.today().strftime('%Y%m%d'))
+    np.random.seed(seed)
     
     conn = DB.openConn()
     
     numRows = DB.execute(conn, query)[0][0]
-    index = int(numerator / denominator * numRows)
+    index = np.random.randint(1, numRows)
     
     query = f"select * from cedict limit 1 offset {index}"
     result = DB.execute(conn, query)
@@ -54,6 +55,31 @@ def getRand():
         return response
     
     return {"word": result[0][0], "definition": result}
+
+@application.route("/getQuiz/<int:numOptions>")
+def getQuiz(numOptions):
+    query = "select count(*) from cedict;"
+    results = {}
+    
+    conn = DB.openConn()
+    numRows = DB.execute(conn, query)[0][0]
+    
+    while len(results) < numOptions:
+        index = np.random.randint(1, numRows)
+        query = f"select * from cedict limit 1 offset {index}"
+        result = DB.execute(conn, query)
+        
+        if result[0][0] not in results:
+            results[result[0][0]] = result[0][3]
+    
+    DB.closeConn(conn)
+    
+    @after_this_request
+    def add_header(response):
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+    
+    return results
 
 if __name__ == "__main__":
     application.run(debug=True)
