@@ -1,9 +1,9 @@
 import React from 'react'
 
-import enums from './enums.js'
+import enums from '../enums.js'
 import DefBar from './definitionBar'
 
-class wordDay extends React.Component {
+class WordOfTheDay extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -18,8 +18,10 @@ class wordDay extends React.Component {
             return {response: enums[0]}
         })
 
-        const request = `http://127.0.0.1:5000/getRandom`
-            //for local - http://127.0.0.1:5000; base AWS EB url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com;  https://elb.bsun-awseb.com
+        const request = `https://elb.bsun-awseb.com/getRandom`
+            //for local - http://127.0.0.1:5000; 
+            // base AWS EB url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com; 
+            // via AWS Route53 https://elb.bsun-awseb.com
         
         const response_key = ['word', 'definition']
 
@@ -61,4 +63,4 @@ class wordDay extends React.Component {
     }
 }
 
-export default wordDay
+export default WordOfTheDay

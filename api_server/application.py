@@ -59,6 +59,7 @@ def getRand():
 @application.route("/getQuiz/<int:numOptions>")
 def getQuiz(numOptions):
     query = "select count(*) from cedict;"
+    np.random.seed()
     results = {}
     
     conn = DB.openConn()
@@ -82,4 +83,4 @@ def getQuiz(numOptions):
     return results
 
 if __name__ == "__main__":
-    application.run(debug=True)
+    application.run()

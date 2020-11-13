@@ -27,7 +27,7 @@ class ChineseDict extends React.Component {
 
     render() {
         return (
-            <div className='main'>
+            <div>
                 <Header />
                 <SearchHistory search={this.state.search} response={this.state.response} />
                 <InputHandler getSearch={this.getSearchChar}/>

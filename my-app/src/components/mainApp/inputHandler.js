@@ -1,6 +1,6 @@
 import React from 'react'
 
-import enums from './enums.js'
+import enums from '../enums.js'
 
 class InputHandler extends React.Component {
     constructor () {
@@ -22,7 +22,9 @@ class InputHandler extends React.Component {
             })
 
             const request = `https://elb.bsun-awseb.com/getDefinition/${this.state.searchChar}`
-            //for local - http://127.0.0.1:5000; base AWS EB url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com
+            //for local - http://127.0.0.1:5000; 
+            // base AWS EB url - http://ChineseDictionary.eba-kxurqxva.us-east-2.elasticbeanstalk.com; 
+            // via AWS Route53 https://elb.bsun-awseb.com
 
             const response_key = 'definition'
             

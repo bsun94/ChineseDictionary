@@ -13,14 +13,14 @@ function Navigation() {
         'quiz': <Quiz />
     }
     
-    return (<div>
+    return (<div className='main-wrapper'>
                 <div className="navButtons">
-                    <span className="link" onClick={() => setPage('main')}>Dictionary</span>
-                    <span className="link" onClick={() => setPage('quiz')}>Word Quiz</span>
-                    <span className="link" onClick={() => setPage('acknow')}>Acknowledgements</span>
+                    <span className="navlink" onClick={() => setPage('main')}>Dictionary</span>
+                    <span className="navlink" onClick={() => setPage('quiz')}>Word Quiz</span>
+                    <span className="navlink" onClick={() => setPage('acknow')}>Acknowledgements</span>
                 </div>
 
-                <div className='main-wrapper'>{pages[page]}</div>
+                <div>{pages[page]}</div>
             </div>)
 }
 
