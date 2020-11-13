@@ -14,14 +14,28 @@ body {
     width: 100%;
     height: 100%;
     margin: 0px;
-    justify-content: center;
+    text-align: center;
+    overflow: auto;
 }
 
-.main {
+.navButtons {
     position: relative;
-    width: 100%;
-    margin: 0px;
-    overflow: auto;
+    display: flex;
+    margin-top: 5px;
+    margin-left: 1%;
+    margin-bottom: 30px;
+    width: 300px;
+    justify-content: space-between;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px black;
+}
+
+.navButtons .navlink:hover {
+    cursor: pointer;
+    text-decoration: underline white 1px;
 }
 
 .header {
@@ -34,6 +48,22 @@ body {
     font-size: 50px;
     line-height: 70px;
     text-shadow: 5px 5px 5px black;
+}
+
+.recentSearches {
+    width: 50%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bolder;
+    font-family: Cambria, Georgia, 'Segoe UI', Times, 'Times New Roman', serif;
+    color: white;
+}
+
+.recentSearchesList {
+    word-spacing: 3px;
 }
 
 .inputSpace {
@@ -52,7 +82,7 @@ body {
 }
 
 #searchButton {
-    width: 10%;
+    min-width: 10%;
     height: 40px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -78,6 +108,8 @@ body {
     border-radius: 10px;
     animation: appear 1s;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cnChars {
@@ -98,6 +130,26 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     line-height: 20px;
+}
+
+.acknowledgement {
+    margin-top: calc(100vh*0.3);
+    margin-bottom: calc(100vh*0.3);
+}
+
+.extlink {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.extlink:hover {
+    text-decoration: underline gray 1px;
+    color: gray;
+}
+
+.quizbox:hover {
+    cursor: pointer;
 }
 
 @keyframes appear {

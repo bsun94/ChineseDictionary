@@ -2,14 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
-import Header from './componenets/heading.js'
-import InputHandler from './componenets/inputHandler.js'
+import Navigation from './components/navigation.js'
 
-ReactDOM.render(
-    <div className='main-wrapper'>
-        <div className='main'>
-            <Header />
-            <InputHandler />
-        </div>
-    </div>
+ReactDOM.render( <Navigation />
 , document.getElementById('root'));
